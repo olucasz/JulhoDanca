@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540">
+  <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#2d3034"/><stop offset="1" stop-color="#9d8c7b"/></linearGradient></defs>
+  <rect width="960" height="540" fill="url(#g)"/>
+  <circle cx="742" cy="168" r="70" fill="#f4f1ed" opacity=".18"/>
+  <path d="M222 380c76-96 158-144 246-144 72 0 138 31 198 94" fill="none" stroke="#f4f1ed" stroke-width="11" opacity=".34"/>
+  <text x="74" y="116" fill="#f4f1ed" font-family="Georgia, serif" font-size="44" font-weight="700">Aula 1</text>
+  <text x="74" y="164" fill="#241818" font-family="Arial, sans-serif" font-size="25" font-weight="700">Base e Intenção</text>
+</svg>

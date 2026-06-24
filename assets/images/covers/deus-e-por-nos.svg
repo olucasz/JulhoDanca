@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 720">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#2f3b3f"/>
+      <stop offset=".52" stop-color="#8c2c2c"/>
+      <stop offset="1" stop-color="#141414"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="720" fill="url(#g)"/>
+  <path d="M110 514c88-92 154-113 247-63 93 49 160 31 253-83" fill="none" stroke="#f4f1ed" stroke-width="8" opacity=".28"/>
+  <path d="M104 553c90-89 162-110 253-60 94 51 172 29 270-92" fill="none" stroke="#f4f1ed" stroke-width="3" opacity=".52"/>
+  <circle cx="566" cy="154" r="52" fill="#d73a3a" opacity=".52"/>
+  <text x="58" y="100" fill="#f4f1ed" font-family="Georgia, serif" font-size="54" font-weight="700">Deus É</text>
+  <text x="58" y="160" fill="#f4f1ed" font-family="Georgia, serif" font-size="54" font-weight="700">por Nós</text>
+  <text x="60" y="638" fill="#b7b0aa" font-family="Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="8">JULHO PARA JESUS</text>
+</svg>

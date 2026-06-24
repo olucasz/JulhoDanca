@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 720">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#0d2b33"/>
+      <stop offset=".58" stop-color="#1d5a68"/>
+      <stop offset="1" stop-color="#141414"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="720" fill="url(#g)"/>
+  <path d="M0 392c73-42 137-42 210 0s137 42 210 0 137-42 210 0 137 42 210 0" fill="none" stroke="#f4f1ed" stroke-width="7" opacity=".33"/>
+  <path d="M0 454c73-42 137-42 210 0s137 42 210 0 137-42 210 0 137 42 210 0" fill="none" stroke="#f4f1ed" stroke-width="4" opacity=".22"/>
+  <path d="M0 516c73-42 137-42 210 0s137 42 210 0 137-42 210 0 137 42 210 0" fill="none" stroke="#d73a3a" stroke-width="6" opacity=".48"/>
+  <text x="62" y="124" fill="#f4f1ed" font-family="Georgia, serif" font-size="62" font-weight="700">Oceanos</text>
+  <text x="62" y="640" fill="#b7b0aa" font-family="Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="8">ENSAIO</text>
+</svg>

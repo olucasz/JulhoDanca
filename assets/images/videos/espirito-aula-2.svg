@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540">
+  <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#161616"/><stop offset=".5" stop-color="#3b3430"/><stop offset="1" stop-color="#832525"/></linearGradient></defs>
+  <rect width="960" height="540" fill="url(#g)"/>
+  <path d="M178 390c84-103 176-155 276-155 118 0 225 73 322 219" fill="none" stroke="#f4f1ed" stroke-width="8" opacity=".3"/>
+  <path d="M306 388c54-48 109-72 166-72 64 0 125 32 184 96" fill="none" stroke="#d73a3a" stroke-width="10" opacity=".7"/>
+  <text x="74" y="116" fill="#f4f1ed" font-family="Georgia, serif" font-size="44" font-weight="700">Aula 2</text>
+  <text x="74" y="164" fill="#b7b0aa" font-family="Arial, sans-serif" font-size="25" font-weight="700">Coreografia Completa</text>
+</svg>
