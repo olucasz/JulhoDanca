@@ -18,6 +18,9 @@
   var nextSong = document.getElementById("nextSong");
   var songList = document.getElementById("songList");
   var playerStatus = document.getElementById("playerStatus");
+  var siteHeader = document.querySelector(".site-header");
+  var menuButton = document.querySelector(".mobile-menu-button");
+  var mobileNav = document.querySelector(".mobile-nav");
 
   var state = {
     currentSongIndex: 0,
@@ -40,7 +43,7 @@
   }
 
   function pluralizeLessons(count) {
-    return count === 1 ? "1 aula" : count + " aulas";
+    return count === 1 ? "1 parte" : count + " partes";
   }
 
   function parseDuration(duration) {
@@ -94,10 +97,8 @@
               escapeHtml(lesson.duration) +
               "</span>" +
               "</span>" +
-              '<span class="lesson-title">Aula ' +
-              (lessonIndex + 1) +
-              " — " +
-              escapeHtml(lesson.title.replace(/^Aula\s+\d+\s+—\s+/, "")) +
+              '<span class="lesson-title">' +
+              escapeHtml(lesson.title) +
               "</span>" +
               "</button>"
             );
@@ -325,6 +326,53 @@
     updateProgress();
   }
 
+  function setMobileMenuState(isOpen) {
+    if (!menuButton || !mobileNav) {
+      return;
+    }
+
+    menuButton.classList.toggle("is-open", isOpen);
+    mobileNav.classList.toggle("is-open", isOpen);
+    if (siteHeader) {
+      siteHeader.classList.toggle("is-menu-open", isOpen);
+    }
+    menuButton.setAttribute("aria-expanded", String(isOpen));
+    menuButton.setAttribute("aria-label", isOpen ? "Fechar menu" : "Abrir menu");
+    mobileNav.setAttribute("aria-hidden", String(!isOpen));
+  }
+
+  function bindMobileMenu() {
+    if (!menuButton || !mobileNav) {
+      return;
+    }
+
+    menuButton.addEventListener("click", function () {
+      setMobileMenuState(!menuButton.classList.contains("is-open"));
+    });
+
+    mobileNav.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        setMobileMenuState(false);
+      });
+    });
+
+    document.addEventListener("click", function (event) {
+      if (
+        menuButton.classList.contains("is-open") &&
+        siteHeader &&
+        !siteHeader.contains(event.target)
+      ) {
+        setMobileMenuState(false);
+      }
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+        setMobileMenuState(false);
+      }
+    });
+  }
+
   function bindEvents() {
     accordion.addEventListener("click", function (event) {
       var trigger = event.target.closest(".accordion-trigger");
@@ -418,6 +466,8 @@
   }
 
   function init() {
+    bindMobileMenu();
+
     if (!Array.isArray(songs) || songs.length === 0) {
       setPlayerStatus("Nenhuma música cadastrada.");
       return;

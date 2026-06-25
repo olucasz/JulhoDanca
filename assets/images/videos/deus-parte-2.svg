@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540">
+  <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#151515"/><stop offset="1" stop-color="#39433d"/></linearGradient></defs>
+  <rect width="960" height="540" fill="url(#g)"/>
+  <path d="M136 380h688M200 316h560M272 252h416" stroke="#f4f1ed" stroke-width="5" opacity=".18"/>
+  <path d="M260 370c80-95 153-95 220 0 70-95 145-95 220 0" fill="none" stroke="#d73a3a" stroke-width="9" opacity=".65"/>
+  <text x="74" y="116" fill="#f4f1ed" font-family="Georgia, serif" font-size="44" font-weight="700">Parte 2</text>
+  <text x="74" y="164" fill="#b7b0aa" font-family="Arial, sans-serif" font-size="25" font-weight="700">Sequência Base</text>
+</svg>

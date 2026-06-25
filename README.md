@@ -1,6 +1,6 @@
 # Julho para Jesus - Ministério de Dança
 
-Biblioteca digital privada para videoaulas e repertório do Ministério de Dança Julho para Jesus.
+Espaço de preparação com repertório e coreografias do Ministério de Dança Julho para Jesus.
 
 O projeto usa apenas HTML, CSS e JavaScript Vanilla. Não existe build, npm ou dependência obrigatória. Para publicar, basta enviar os arquivos para a pasta `public_html` da hospedagem.
 
@@ -38,11 +38,11 @@ Cada música fica dentro da lista `songs`:
 
 Depois, coloque o arquivo de áudio na pasta `assets/audio/` e a capa na pasta `assets/images/covers/`.
 
-## Como trocar vídeos
+## Como trocar coreografias
 
 No mesmo arquivo `js/data.js`, edite a lista `videoLessons`.
 
-Cada música pode ter várias aulas:
+Cada música pode ter várias partes:
 
 ```js
 {
@@ -50,10 +50,10 @@ Cada música pode ter várias aulas:
   songTitle: "Deus É por Nós",
   lessons: [
     {
-      id: "aula-1",
-      title: "Aula 1 — Introdução",
+      id: "parte-1",
+      title: "Parte 1 — Introdução",
       duration: "18:32",
-      thumbnail: "assets/images/videos/aula-1.jpg",
+      thumbnail: "assets/images/videos/parte-1.jpg",
       videoUrl: "https://www.youtube.com/embed/VIDEO_ID"
     }
   ]
@@ -68,15 +68,21 @@ https://www.youtube.com/embed/ID_DO_VIDEO
 
 ## Como trocar thumbnails
 
-Coloque as imagens das aulas em `assets/images/videos/`.
+Coloque as imagens das partes ou sequências em `assets/images/videos/`.
 
-Depois atualize o campo `thumbnail` da aula no `js/data.js`:
+Depois atualize o campo `thumbnail` no `js/data.js`:
 
 ```js
-thumbnail: "assets/images/videos/minha-aula.jpg"
+thumbnail: "assets/images/videos/minha-parte.jpg"
 ```
 
 Use imagens horizontais, de preferência no formato 16:9.
+
+## Como trocar a imagem da entrada
+
+Substitua o arquivo `assets/images/hero-dance-bg.jpg` por outra imagem com o mesmo nome.
+
+A imagem é usada de forma discreta no fundo da entrada do site, com overlay escuro e vermelho aplicado pelo CSS.
 
 ## Como publicar na Hostinger
 
@@ -92,4 +98,4 @@ Não rode build. Não instale npm. Não é necessário configurar servidor espec
 
 - O player de áudio usa a API nativa do navegador.
 - Ao fechar o modal de vídeo, o iframe é removido para interromper a reprodução.
-- Para adicionar novas músicas ou aulas, edite apenas `js/data.js` e envie os novos arquivos para as pastas em `assets/`.
+- Para adicionar novas músicas, partes ou sequências, edite apenas `js/data.js` e envie os novos arquivos para as pastas em `assets/`.

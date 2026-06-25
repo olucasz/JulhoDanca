@@ -1,173 +1,195 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta
-      name="description"
-      content="Biblioteca privada de videoaulas e repertório do Ministério de Dança Julho para Jesus."
-    >
-    <title>Julho para Jesus | Ministério de Dança</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
-      rel="stylesheet"
-    >
-    <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body>
-    <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
 
-    <header class="site-header">
-      <div class="header-inner">
-        <a class="brand" href="#" aria-label="Julho para Jesus, início">
-          <img
-            class="brand-logo"
-            src="assets/logo/logo-julho-para-jesus.svg"
-            width="34"
-            height="34"
-            alt=""
-          >
-          <span class="brand-copy">
-            <strong>Julho para Jesus</strong>
-            <small>Ministério de Dança</small>
-          </span>
-        </a>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Espaço de preparação com repertório e coreografias do Ministério de Dança Julho para Jesus.">
+  <title>Julho para Jesus | Ministério de Dança</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,600&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
 
-        <nav class="main-nav" aria-label="Navegação principal">
-          <a href="#videoaulas">Videoaulas</a>
-          <a href="#repertorio">Repertório</a>
-        </nav>
-      </div>
-    </header>
+<body>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
 
-    <main id="conteudo">
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="container hero-inner">
-          <p class="eyebrow">Biblioteca privada</p>
-          <h1 id="hero-title">Biblioteca do Ministério de Dança</h1>
-          <p>
-            Acesse as videoaulas e o repertório oficial utilizados nos ensaios
-            do ministério.
-          </p>
-          <strong>Dance. Adore. Sirva.</strong>
-        </div>
-      </section>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#" aria-label="Julho para Jesus, início">
+        <img class="brand-logo" src="assets/logo/julho-para-jesus-logo.svg" width="34" height="34" alt="Julho para Jesus">
+        <!-- <span class="brand-copy">
+          <strong>Julho para Jesus</strong>
+          <small>Ministério de Dança</small>
+        </span> -->
+      </a>
 
-      <section class="section section-feature" id="videoaulas" aria-labelledby="videoaulas-title">
-        <div class="container">
-          <div class="section-heading">
-            <span class="section-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" focusable="false">
-                <path d="M4 7.5A2.5 2.5 0 0 1 6.5 5h7A2.5 2.5 0 0 1 16 7.5v1.2l3.4-2a1 1 0 0 1 1.5.9v8.8a1 1 0 0 1-1.5.9l-3.4-2v1.2a2.5 2.5 0 0 1-2.5 2.5h-7A2.5 2.5 0 0 1 4 16.5v-9Zm2.5-.8a.8.8 0 0 0-.8.8v9c0 .4.4.8.8.8h7c.4 0 .8-.4.8-.8v-9c0-.4-.4-.8-.8-.8h-7Zm9.5 4v2.6l3.2 1.9V8.8L16 10.7Z"/>
-              </svg>
-            </span>
-            <div>
-              <p class="eyebrow">Videoaulas</p>
-              <h2 id="videoaulas-title">Videoaulas</h2>
-              <p>Clique em uma música para visualizar as aulas disponíveis.</p>
-            </div>
-          </div>
+      <nav class="main-nav" aria-label="Navegação principal">
+        <a href="#repertorio">Repertório</a>
+        <a href="#coreografias">Coreografias</a>
+      </nav>
 
-          <div class="accordion" id="videoLessonsAccordion" aria-live="polite"></div>
-        </div>
-      </section>
-
-      <section class="section" id="repertorio" aria-labelledby="repertorio-title">
-        <div class="container">
-          <div class="section-heading">
-            <span class="section-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" focusable="false">
-                <path d="M10 4v11.2A3.2 3.2 0 1 1 8.3 12.4V6h9v9.2a3.2 3.2 0 1 1-1.7-2.8V4H10Z"/>
-              </svg>
-            </span>
-            <div>
-              <p class="eyebrow">Repertório</p>
-              <h2 id="repertorio-title">Repertório</h2>
-              <p>Músicas de apoio para estudo, revisão e ensaio.</p>
-            </div>
-          </div>
-
-          <div class="music-shell">
-            <article class="audio-player" aria-label="Player do repertório">
-              <div class="now-playing">
-                <img
-                  id="currentCover"
-                  src="assets/images/covers/deus-e-por-nos.svg"
-                  width="160"
-                  height="160"
-                  alt=""
-                >
-                <div>
-                  <p class="eyebrow">Tocando agora</p>
-                  <h3 id="currentTitle">Deus É por Nós</h3>
-                  <p id="currentArtist">Ministério Julho para Jesus</p>
-                </div>
-              </div>
-
-              <div class="progress-row">
-                <span id="currentTime">0:00</span>
-                <button class="progress-track" id="progressTrack" type="button" aria-label="Mudar posição da música">
-                  <span id="progressFill"></span>
-                </button>
-                <span id="totalTime">0:00</span>
-              </div>
-
-              <div class="player-actions">
-                <button class="icon-button" id="previousSong" type="button" aria-label="Música anterior">
-                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                    <path d="M6 5h2v14H6V5Zm3 7 9-7v14l-9-7Z"/>
-                  </svg>
-                </button>
-                <button class="play-button" id="playPause" type="button" aria-label="Reproduzir">
-                  <svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                    <path d="M8 5v14l11-7L8 5Z"/>
-                  </svg>
-                  <svg class="pause-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                    <path d="M7 5h4v14H7V5Zm6 0h4v14h-4V5Z"/>
-                  </svg>
-                </button>
-                <button class="icon-button" id="nextSong" type="button" aria-label="Próxima música">
-                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                    <path d="M16 5h2v14h-2V5ZM6 19V5l9 7-9 7Z"/>
-                  </svg>
-                </button>
-              </div>
-
-              <p class="player-status" id="playerStatus" role="status"></p>
-              <audio id="audioPlayer" preload="metadata"></audio>
-            </article>
-
-            <div class="track-list" id="songList" role="listbox" aria-label="Lista de músicas"></div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="container footer-inner">
-        <span>Julho para Jesus</span>
-        <span>Ministério de Dança</span>
-      </div>
-    </footer>
-
-    <div class="modal is-hidden" id="videoModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-      <button class="modal-backdrop" type="button" data-close-modal aria-label="Fechar vídeo"></button>
-      <div class="modal-dialog">
-        <div class="modal-top">
-          <h2 id="modalTitle">Aula</h2>
-          <button class="modal-close" type="button" data-close-modal aria-label="Fechar">
-            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-              <path d="m6.7 5.3 5.3 5.3 5.3-5.3 1.4 1.4-5.3 5.3 5.3 5.3-1.4 1.4-5.3-5.3-5.3 5.3-1.4-1.4 5.3-5.3-5.3-5.3 1.4-1.4Z"/>
-            </svg>
-          </button>
-        </div>
-        <div class="video-frame" id="modalPlayer"></div>
-      </div>
+      <button class="mobile-menu-button" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileNav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
 
-    <script src="js/data.js"></script>
-    <script src="js/app.js"></script>
-  </body>
+    <nav class="mobile-nav" id="mobileNav" aria-label="Navegação mobile" aria-hidden="true">
+      <div class="mobile-nav-inner">
+        <a href="#repertorio">Repertório</a>
+        <a href="#coreografias">Coreografias</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-visual" aria-hidden="true">
+        <img src="assets/images/hero-dance-bg.jpg" alt="">
+      </div>
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <div class="hero-kicker">
+            <p>Mourning into Dancing <span class="spanSalmo">· Salmos 30:11</span></p>
+          </div>
+          <h1 class="hero-title" id="hero-title">
+            Seja bem-vinda<br>
+            ao Ministério<br>
+            <span class="hero-title-line">
+              <span class="title-normal">de</span>
+              <span class="title-accent">Dança</span>
+            </span>
+          </h1>
+          <div class="hero-text">
+            <p>
+              Feliz por você ter aceitado o desafio de pregar o Evangelho
+              através da dança.
+            </p>
+            <p>
+              A arte tem sido usada por Deus para transmitir a alegria e a graça
+              da Presença do Senhor.
+            </p>
+            <p>
+              Que esse tempo de preparação seja um divisor de águas em sua vida
+              com Deus.
+            </p>
+          </div>
+          <strong class="hero-phrase">Dance. Adore. Sirva.</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="repertorio" aria-labelledby="repertorio-title">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Músicas</p>
+            <h2 id="repertorio-title">Repertório</h2>
+            <p>Músicas de apoio para estudo, revisão e ensaio.</p>
+          </div>
+        </div>
+
+        <div class="music-shell">
+          <article class="audio-player" aria-label="Player do repertório">
+            <div class="now-playing">
+              <img id="currentCover" src="assets/images/covers/deus-e-por-nos.svg" width="160" height="160" alt="">
+              <div class="now-playing-copy">
+                <p class="eyebrow">Tocando agora</p>
+                <h3 id="currentTitle">Deus É por Nós</h3>
+                <p id="currentArtist">Ministério Julho para Jesus</p>
+              </div>
+            </div>
+
+            <div class="progress-row">
+              <span id="currentTime">0:00</span>
+              <button class="progress-track" id="progressTrack" type="button" aria-label="Mudar posição da música">
+                <span id="progressFill"></span>
+              </button>
+              <span id="totalTime">0:00</span>
+            </div>
+
+            <div class="player-actions">
+              <button class="icon-button" id="previousSong" type="button" aria-label="Música anterior">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <path d="M6 5h2v14H6V5Zm3 7 9-7v14l-9-7Z" />
+                </svg>
+              </button>
+              <button class="play-button" id="playPause" type="button" aria-label="Reproduzir">
+                <svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <path d="M8 5v14l11-7L8 5Z" />
+                </svg>
+                <svg class="pause-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <path d="M7 5h4v14H7V5Zm6 0h4v14h-4V5Z" />
+                </svg>
+              </button>
+              <button class="icon-button" id="nextSong" type="button" aria-label="Próxima música">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <path d="M16 5h2v14h-2V5ZM6 19V5l9 7-9 7Z" />
+                </svg>
+              </button>
+            </div>
+
+            <p class="player-status" id="playerStatus" role="status"></p>
+            <audio id="audioPlayer" preload="metadata"></audio>
+          </article>
+
+          <div class="track-list" id="songList" role="listbox" aria-label="Lista de músicas"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-feature" id="coreografias" aria-labelledby="coreografias-title">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Vídeos</p>
+            <h2 id="coreografias-title">Coreografias</h2>
+            <p>Clique em uma música para visualizar as sequências disponíveis.</p>
+          </div>
+        </div>
+
+        <div class="accordion" id="videoLessonsAccordion" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="verse-band" aria-labelledby="verse-title">
+      <div class="container verse-content">
+        <p class="eyebrow" id="verse-title">Palavra</p>
+        <blockquote>
+          <p>“Louvem o seu nome com dança; cantem-lhe louvores com tamborim e harpa.”</p>
+          <cite>Salmos 149:3</cite>
+        </blockquote>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <p>© 2026 Julho para Jesus</p>
+      <p>Developed by Lucasz · Voxion Studio. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <div class="modal is-hidden" id="videoModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-backdrop" type="button" data-close-modal aria-label="Fechar vídeo"></button>
+    <div class="modal-dialog">
+      <div class="modal-top">
+        <h2 id="modalTitle">Coreografia</h2>
+        <button class="modal-close" type="button" data-close-modal aria-label="Fechar">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="m6.7 5.3 5.3 5.3 5.3-5.3 1.4 1.4-5.3 5.3 5.3 5.3-1.4 1.4-5.3-5.3-5.3 5.3-1.4-1.4 5.3-5.3-5.3-5.3 1.4-1.4Z" />
+          </svg>
+        </button>
+      </div>
+      <div class="video-frame" id="modalPlayer"></div>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
 </html>

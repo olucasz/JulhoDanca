@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540">
-  <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#243131"/><stop offset="1" stop-color="#912b2b"/></linearGradient></defs>
-  <rect width="960" height="540" fill="url(#g)"/>
-  <path d="M242 392c78-118 162-177 252-177 79 0 149 46 211 138" fill="none" stroke="#f4f1ed" stroke-width="12" opacity=".3"/>
-  <path d="M318 394c55-60 109-90 162-90 55 0 107 27 156 82" fill="none" stroke="#d73a3a" stroke-width="9" opacity=".76"/>
-  <text x="74" y="116" fill="#f4f1ed" font-family="Georgia, serif" font-size="44" font-weight="700">Aula 1</text>
-  <text x="74" y="164" fill="#b7b0aa" font-family="Arial, sans-serif" font-size="25" font-weight="700">Movimentos Iniciais</text>
-</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540">
+  <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#101010"/><stop offset="1" stop-color="#22525b"/></linearGradient></defs>
+  <rect width="960" height="540" fill="url(#g)"/>
+  <rect x="158" y="196" width="644" height="206" rx="14" fill="none" stroke="#f4f1ed" stroke-width="5" opacity=".18"/>
+  <path d="M232 344c66-74 136-111 209-111 93 0 174 56 245 169" fill="none" stroke="#d73a3a" stroke-width="8" opacity=".66"/>
+  <text x="74" y="116" fill="#f4f1ed" font-family="Georgia, serif" font-size="44" font-weight="700">Parte 3</text>
+  <text x="74" y="164" fill="#b7b0aa" font-family="Arial, sans-serif" font-size="25" font-weight="700">Revisão Completa</text>
+</svg>
