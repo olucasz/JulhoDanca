@@ -13,6 +13,7 @@
   var totalTime = document.getElementById("totalTime");
   var progressTrack = document.getElementById("progressTrack");
   var progressFill = document.getElementById("progressFill");
+  var audioPlayerShell = document.querySelector(".audio-player");
   var playPause = document.getElementById("playPause");
   var previousSong = document.getElementById("previousSong");
   var nextSong = document.getElementById("nextSong");
@@ -24,7 +25,11 @@
 
   var state = {
     currentSongIndex: 0,
-    lastFocusedElement: null
+    lastFocusedElement: null,
+    hasUserInteractedWithAudio: false,
+    preloadAudio: null,
+    preloadHandle: null,
+    videoLoadTimer: null
   };
 
   function escapeHtml(value) {
@@ -44,6 +49,30 @@
 
   function pluralizeLessons(count) {
     return count === 1 ? "1 parte" : count + " partes";
+  }
+
+  function normalizeUrl(url) {
+    return String(url || "").replace(/&amp;/g, "&");
+  }
+
+  function appendQueryParams(url, params) {
+    var normalizedUrl = normalizeUrl(url);
+    var separator = normalizedUrl.indexOf("?") === -1 ? "?" : "&";
+    return normalizedUrl + separator + params;
+  }
+
+  function buildVideoEmbedUrl(url) {
+    var normalizedUrl = normalizeUrl(url);
+
+    if (normalizedUrl.indexOf("youtube.com") !== -1 || normalizedUrl.indexOf("youtube-nocookie.com") !== -1) {
+      return appendQueryParams(normalizedUrl, "autoplay=1&rel=0&modestbranding=1");
+    }
+
+    if (normalizedUrl.indexOf("player.vimeo.com") !== -1) {
+      return appendQueryParams(normalizedUrl, "autoplay=1&title=0&byline=0&portrait=0");
+    }
+
+    return normalizedUrl;
   }
 
   function parseDuration(duration) {
@@ -89,7 +118,9 @@
               '<span class="lesson-media">' +
               '<img src="' +
               escapeHtml(lesson.thumbnail) +
-              '" alt="" loading="lazy" width="480" height="270">' +
+              '" alt="' +
+              escapeHtml(lesson.title) +
+              '" loading="lazy" decoding="async" width="640" height="360">' +
               '<span class="lesson-play" aria-hidden="true">' +
               '<svg viewBox="0 0 24 24" focusable="false"><path d="M8 5v14l11-7L8 5Z"/></svg>' +
               "</span>" +
@@ -156,6 +187,18 @@
     var item = trigger.closest(".accordion-item");
     var isOpen = item.classList.contains("is-open");
 
+    if (!isOpen) {
+      accordion.querySelectorAll(".accordion-item.is-open").forEach(function (openItem) {
+        if (openItem !== item) {
+          openItem.classList.remove("is-open");
+          var openTrigger = openItem.querySelector(".accordion-trigger");
+          if (openTrigger) {
+            openTrigger.setAttribute("aria-expanded", "false");
+          }
+        }
+      });
+    }
+
     item.classList.toggle("is-open", !isOpen);
     trigger.setAttribute("aria-expanded", String(!isOpen));
   }
@@ -165,19 +208,37 @@
       return;
     }
 
-    var separator = lesson.videoUrl.indexOf("?") === -1 ? "?" : "&";
-    var src = lesson.videoUrl + separator + "autoplay=1&rel=0";
+    var src = buildVideoEmbedUrl(lesson.videoUrl);
 
+    audio.pause();
+    updatePlayButton(false);
+    setPlayerState("paused", "Pausado");
     state.lastFocusedElement = document.activeElement;
     modalTitle.textContent = lesson.title;
     modalPlayer.innerHTML =
+      '<div class="video-loading" role="status">' +
+      '<span>Carregando vídeo...</span>' +
+      "</div>" +
       '<iframe src="' +
       escapeHtml(src) +
-      '" title="' +
+      '" loading="eager" title="' +
       escapeHtml(lesson.title) +
       '" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+    modal.classList.add("is-loading");
     modal.classList.remove("is-hidden");
     document.body.classList.add("modal-open");
+
+    var iframe = modalPlayer.querySelector("iframe");
+    if (iframe) {
+      iframe.addEventListener("load", function () {
+        modal.classList.remove("is-loading");
+      });
+    }
+
+    window.clearTimeout(state.videoLoadTimer);
+    state.videoLoadTimer = window.setTimeout(function () {
+      modal.classList.remove("is-loading");
+    }, 6000);
 
     var closeButton = modal.querySelector(".modal-close");
     if (closeButton) {
@@ -191,6 +252,8 @@
     }
 
     modal.classList.add("is-hidden");
+    modal.classList.remove("is-loading");
+    window.clearTimeout(state.videoLoadTimer);
     modalPlayer.innerHTML = "";
     document.body.classList.remove("modal-open");
 
@@ -215,7 +278,7 @@
           "</span>" +
           '<img src="' +
           escapeHtml(song.cover) +
-          '" alt="" loading="lazy" width="52" height="52">' +
+          '" alt="" loading="lazy" decoding="async" width="52" height="52">' +
           '<span class="track-copy"><strong>' +
           escapeHtml(song.title) +
           "</strong><small>" +
@@ -236,6 +299,13 @@
 
   function setPlayerStatus(message) {
     playerStatus.textContent = message || "";
+  }
+
+  function setPlayerState(stateName, message) {
+    if (audioPlayerShell) {
+      audioPlayerShell.dataset.state = stateName || "idle";
+    }
+    setPlayerStatus(message || "");
   }
 
   function getDisplayDuration(song) {
@@ -269,6 +339,8 @@
     var nextIndex = (index + songs.length) % songs.length;
     var song = songs[nextIndex];
 
+    audio.pause();
+    state.hasUserInteractedWithAudio = state.hasUserInteractedWithAudio || Boolean(shouldPlay);
     state.currentSongIndex = nextIndex;
     audio.src = song.audio;
     audio.load();
@@ -280,7 +352,7 @@
     totalTime.textContent = song.duration;
     currentTime.textContent = "0:00";
     progressFill.style.width = "0%";
-    setPlayerStatus("");
+    setPlayerState(shouldPlay ? "loading" : "paused", shouldPlay ? "Carregando música..." : "Pausado");
     updateSelectedTrack();
     updatePlayButton(false);
 
@@ -295,13 +367,60 @@
   }
 
   function playCurrentSong() {
+    state.hasUserInteractedWithAudio = true;
+    if (audio.readyState < 3) {
+      setPlayerState("loading", "Carregando música...");
+    }
+
     var playPromise = audio.play();
 
     if (playPromise && typeof playPromise.catch === "function") {
       playPromise.catch(function () {
-        setPlayerStatus("Não foi possível reproduzir este arquivo de áudio.");
+        setPlayerState("error", "Não foi possível carregar esta música.");
         updatePlayButton(false);
       });
+    }
+  }
+
+  function preloadNextSong() {
+    if (!state.hasUserInteractedWithAudio || songs.length < 2) {
+      return;
+    }
+
+    if (state.preloadHandle) {
+      if (typeof window.cancelIdleCallback === "function") {
+        window.cancelIdleCallback(state.preloadHandle);
+      } else {
+        window.clearTimeout(state.preloadHandle);
+      }
+    }
+
+    var currentIndex = state.currentSongIndex;
+    var runPreload = function () {
+      if (currentIndex !== state.currentSongIndex) {
+        return;
+      }
+
+      var nextSong = songs[(state.currentSongIndex + 1) % songs.length];
+      if (!nextSong || !nextSong.audio) {
+        return;
+      }
+
+      if (!state.preloadAudio) {
+        state.preloadAudio = new Audio();
+        state.preloadAudio.preload = "metadata";
+      }
+
+      if (state.preloadAudio.getAttribute("src") !== nextSong.audio) {
+        state.preloadAudio.src = nextSong.audio;
+        state.preloadAudio.load();
+      }
+    };
+
+    if (typeof window.requestIdleCallback === "function") {
+      state.preloadHandle = window.requestIdleCallback(runPreload, { timeout: 2500 });
+    } else {
+      state.preloadHandle = window.setTimeout(runPreload, 1200);
     }
   }
 
@@ -409,10 +528,12 @@
     });
 
     previousSong.addEventListener("click", function () {
+      state.hasUserInteractedWithAudio = true;
       loadSong(state.currentSongIndex - 1, true);
     });
 
     nextSong.addEventListener("click", function () {
+      state.hasUserInteractedWithAudio = true;
       loadSong(state.currentSongIndex + 1, true);
     });
 
@@ -420,6 +541,7 @@
       var item = event.target.closest(".track-item");
 
       if (item) {
+        state.hasUserInteractedWithAudio = true;
         loadSong(Number(item.dataset.songIndex), true);
       }
     });
@@ -445,23 +567,41 @@
     });
 
     audio.addEventListener("play", function () {
-      setPlayerStatus("");
+      setPlayerState("playing", "Tocando");
       updatePlayButton(true);
     });
 
     audio.addEventListener("pause", function () {
+      if (!audio.ended && audio.src) {
+        setPlayerState("paused", "Pausado");
+      }
       updatePlayButton(false);
     });
 
     audio.addEventListener("timeupdate", updateProgress);
-    audio.addEventListener("loadedmetadata", updateProgress);
+    audio.addEventListener("loadedmetadata", function () {
+      updateProgress();
+      preloadNextSong();
+    });
+    audio.addEventListener("canplay", function () {
+      if (audio.paused) {
+        setPlayerState("paused", "Pausado");
+      }
+      preloadNextSong();
+    });
+    audio.addEventListener("waiting", function () {
+      setPlayerState("loading", "Carregando música...");
+    });
+    audio.addEventListener("playing", function () {
+      setPlayerState("playing", "Tocando");
+    });
     audio.addEventListener("ended", function () {
       loadSong(state.currentSongIndex + 1, true);
     });
 
     audio.addEventListener("error", function () {
       updatePlayButton(false);
-      setPlayerStatus("Arquivo de áudio não encontrado. Confira o caminho em js/data.js.");
+      setPlayerState("error", "Não foi possível carregar esta música.");
     });
   }
 

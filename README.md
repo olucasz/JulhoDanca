@@ -9,6 +9,7 @@ O projeto usa apenas HTML, CSS e JavaScript Vanilla. Não existe build, npm ou d
 ```text
 /
 index.html
+.htaccess
 README.md
 css/style.css
 js/app.js
@@ -66,6 +67,12 @@ Para usar um vídeo do YouTube, copie o ID do vídeo e coloque no formato:
 https://www.youtube.com/embed/ID_DO_VIDEO
 ```
 
+Para Vimeo, use o formato player:
+
+```text
+https://player.vimeo.com/video/ID_DO_VIDEO
+```
+
 ## Como trocar thumbnails
 
 Coloque as imagens das partes ou sequências em `assets/images/videos/`.
@@ -77,6 +84,20 @@ thumbnail: "assets/images/videos/minha-parte.jpg"
 ```
 
 Use imagens horizontais, de preferência no formato 16:9.
+
+## Boas práticas para mídia
+
+- Use MP3 comprimido para músicas sempre que possível.
+- Evite arquivos de áudio muito grandes.
+- Use thumbnails JPG ou WebP otimizadas.
+- Prefira thumbnails 1280x720 ou 854x480.
+- Evite PNG pesado para thumbnails.
+- Não suba vídeos diretamente na Hostinger.
+- Use YouTube ou Vimeo para vídeos.
+- Para YouTube, use link embed no campo `videoUrl`.
+- Para Vimeo, use `player.vimeo.com` no campo `videoUrl`.
+- Se um vídeo do YouTube der erro por copyright, teste subir no Vimeo.
+- Se possível, use vídeos sem áudio original protegido e deixe a música no player.
 
 ## Como trocar a imagem da entrada
 
@@ -93,6 +114,14 @@ A imagem é usada de forma discreta no fundo da entrada do site, com overlay esc
 5. Abra o domínio no navegador.
 
 Não rode build. Não instale npm. Não é necessário configurar servidor especial.
+
+## Como melhorar carregamento na Hostinger
+
+O projeto inclui um arquivo `.htaccess` na raiz.
+
+Ele orienta hospedagens Apache, como a Hostinger, a manter CSS, JS, imagens, SVGs, fontes e áudios em cache por mais tempo. Isso ajuda thumbnails, logos e músicas a carregarem mais rápido depois do primeiro acesso.
+
+O HTML principal não recebe cache agressivo, para facilitar atualizações do site.
 
 ## Observações
 
