@@ -1,139 +1,105 @@
 const songs = [
   {
-    id: "deus-e-por-nos",
-    title: "Deus É por Nós",
-    artist: "Tons de Adoração",
+    id: "SorriaMusic",
+    title: "Sorria / Meu Alvo",
+    artist: "Comunidade das Nações",
     duration: "05:12",
-    audio: "assets/audio/deus-e-por-nos.wav",
-    cover: "assets/images/covers/deus-e-por-nos.svg"
+    audio: "assets/audio/sorria.wav",
+    cover: "assets/images/covers/sorria.jpg",
   },
   {
-    id: "forte-em-teu-amor",
-    title: "Forte em Teu Amor",
-    artist: "Hillsong Worship",
-    duration: "04:48",
-    audio: "assets/audio/forte-em-teu-amor.wav",
-    cover: "assets/images/covers/forte-em-teu-amor.svg"
+    id: "naoPare",
+    title: "Não Pare de Crer",
+    artist: "Preto no Branco",
+    duration: "03:40",
+    audio: "assets/audio/naoPare.mp3",
+    cover: "assets/images/covers/naoPare.jpeg",
   },
   {
-    id: "oceanos",
-    title: "Oceanos",
-    artist: "Hillsong United",
+    id: "algoNovo",
+    title: "Algo Novo Vindo",
+    artist: "Get Worship",
     duration: "06:30",
-    audio: "assets/audio/oceanos.wav",
-    cover: "assets/images/covers/oceanos.svg"
+    audio: "assets/audio/algoNovo.wav",
+    cover: "assets/images/covers/algoNovo.jpeg",
   },
-  {
-    id: "nada-alem-do-sangue",
-    title: "Nada Além do Sangue",
-    artist: "Ministério Zoe",
-    duration: "05:05",
-    audio: "assets/audio/nada-alem-do-sangue.wav",
-    cover: "assets/images/covers/nada-alem-do-sangue.svg"
-  },
-  {
-    id: "espirito-santo",
-    title: "Espírito Santo",
-    artist: "Laura Souguellis",
-    duration: "04:22",
-    audio: "assets/audio/espirito-santo.wav",
-    cover: "assets/images/covers/espirito-santo.svg"
-  }
 ];
 
 const videoLessons = [
   {
-    songId: "deus-e-por-nos",
-    songTitle: "Deus É por Nós",
+    songId: "Sorria",
+    songTitle: "Sorria / Meu Alvo",
     lessons: [
       {
-        id: "deus-aula-1",
-        title: "Aula 1 — Introdução e Aquecimento",
-        duration: "18:32",
-        thumbnail: "assets/images/videos/deus-aula-1.svg",
-        videoUrl: "https://www.youtube.com/embed/VIDEO_ID_DEUS_1"
+        id: "sorria-completo",
+        title: "Coreografia Completa",
+        duration: "3:35",
+        thumbnail: "assets/images/videos/Sorria-CP.png",
+        videoUrl: "https://www.youtube.com/embed/SRYyGJqIBOE",
+        externalUrl: "https://www.youtube.com/watch?v=SRYyGJqIBOE",
       },
       {
-        id: "deus-aula-2",
-        title: "Aula 2 — Sequência Base",
-        duration: "22:15",
-        thumbnail: "assets/images/videos/deus-aula-2.svg",
-        videoUrl: "https://www.youtube.com/embed/VIDEO_ID_DEUS_2"
+        id: "sorria-parte-1",
+        title: "Passo a Passo — Refrão",
+        duration: "1:24",
+        thumbnail: "assets/images/videos/Sorria-PP.png",
+        videoUrl: "https://www.youtube.com/embed/V378E1yK7UU",
+        externalUrl: "https://www.youtube.com/watch?v=V378E1yK7UU",
       },
-      {
-        id: "deus-aula-3",
-        title: "Aula 3 — Coreografia Completa",
-        duration: "19:44",
-        thumbnail: "assets/images/videos/deus-aula-3.svg",
-        videoUrl: "https://www.youtube.com/embed/VIDEO_ID_DEUS_3"
-      }
-    ]
+    ],
   },
   {
-    songId: "forte-em-teu-amor",
-    songTitle: "Forte em Teu Amor",
+    songId: "AlgoNovo",
+    songTitle: "Algo Novo Vindo",
     lessons: [
       {
-        id: "forte-aula-1",
-        title: "Aula 1 — Movimentos Iniciais",
-        duration: "20:10",
-        thumbnail: "assets/images/videos/forte-aula-1.svg",
-        videoUrl: "https://www.youtube.com/embed/VIDEO_ID_FORTE_1"
+        id: "algo-novo-completo",
+        title: "Coreografia Completa",
+        duration: "4:33",
+        thumbnail: "assets/images/videos/algo-completo.png",
+        videoUrl:
+          "https://player.vimeo.com/video/1204574370?badge=0&autopause=0&player_id=0&app_id=58479",
+        externalUrl: "https://vimeo.com/1204574370",
       },
       {
-        id: "forte-aula-2",
-        title: "Aula 2 — Finalização e Formações",
-        duration: "25:33",
-        thumbnail: "assets/images/videos/forte-aula-2.svg",
-        videoUrl: "https://www.youtube.com/embed/VIDEO_ID_FORTE_2"
-      }
-    ]
+        id: "algo-novo-refrao",
+        title: "Passo a Passo",
+        duration: "2:19",
+        thumbnail: "assets/images/videos/algo-refrao.png",
+        videoUrl: "https://www.youtube.com/embed/EZZr-TuPAi8",
+        externalUrl: "https://www.youtube.com/watch?v=EZZr-TuPAi8",
+      },
+      {
+        id: "algo-novo-ponte",
+        title: "Passo a Passo - Final",
+        duration: "1:19",
+        thumbnail: "assets/images/videos/algo-ponte.png",
+        videoUrl: "https://www.youtube.com/embed/PRNW9I3wBBQ",
+        externalUrl: "https://www.youtube.com/watch?v=PRNW9I3wBBQ",
+      },
+    ],
   },
   {
-    songId: "oceanos",
-    songTitle: "Oceanos",
+    songId: "Naopare",
+    songTitle: "Não Pare de Crer",
     lessons: [
       {
-        id: "oceanos-aula-1",
-        title: "Aula 1 — Expressão e Transições",
-        duration: "17:50",
-        thumbnail: "assets/images/videos/oceanos-aula-1.svg",
-        videoUrl: "https://www.youtube.com/embed/VIDEO_ID_OCEANOS_1"
+        id: "nao-pare-completo",
+        title: "Coreografia Completa",
+        duration: "1:47",
+        thumbnail: "assets/images/videos/naoPare-CC.png",
+        videoUrl:
+          "https://player.vimeo.com/video/1204575723?badge=0&autopause=0&player_id=0&app_id=58479",
+        externalUrl: "https://vimeo.com/1204575723",
       },
       {
-        id: "oceanos-aula-2",
-        title: "Aula 2 — Sequência Principal",
-        duration: "23:08",
-        thumbnail: "assets/images/videos/oceanos-aula-2.svg",
-        videoUrl: "https://www.youtube.com/embed/VIDEO_ID_OCEANOS_2"
+        id: "nao-pare-passo",
+        title: "Passo a Passo",
+        duration: "2:51",
+        thumbnail: "assets/images/videos/naoPare-passo.png",
+        videoUrl: "https://www.youtube.com/embed/ByUWagAA6vo",
+        externalUrl: "https://www.youtube.com/watch?v=ByUWagAA6vo",
       },
-      {
-        id: "oceanos-aula-3",
-        title: "Aula 3 — Revisão Completa",
-        duration: "21:46",
-        thumbnail: "assets/images/videos/oceanos-aula-3.svg",
-        videoUrl: "https://www.youtube.com/embed/VIDEO_ID_OCEANOS_3"
-      }
-    ]
+    ],
   },
-  {
-    songId: "espirito-santo",
-    songTitle: "Espírito Santo",
-    lessons: [
-      {
-        id: "espirito-aula-1",
-        title: "Aula 1 — Base e Intenção",
-        duration: "16:28",
-        thumbnail: "assets/images/videos/espirito-aula-1.svg",
-        videoUrl: "https://www.youtube.com/embed/VIDEO_ID_ESPIRITO_1"
-      },
-      {
-        id: "espirito-aula-2",
-        title: "Aula 2 — Coreografia Completa",
-        duration: "24:19",
-        thumbnail: "assets/images/videos/espirito-aula-2.svg",
-        videoUrl: "https://www.youtube.com/embed/VIDEO_ID_ESPIRITO_2"
-      }
-    ]
-  }
 ];
