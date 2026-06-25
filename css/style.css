@@ -1178,32 +1178,45 @@ img {
     background:
       linear-gradient(
         180deg,
-        rgba(8, 8, 8, 0.98) 0%,
-        rgba(8, 8, 8, 0.92) 42%,
-        rgba(20, 0, 0, 0.78) 100%
+        rgba(8, 8, 8, 0.18) 0%,
+        rgba(8, 8, 8, 0.2) 48%,
+        rgba(20, 0, 0, 0.46) 100%
       ),
       linear-gradient(
         90deg,
-        rgba(8, 8, 8, 0.96) 0%,
-        rgba(8, 8, 8, 0.86) 52%,
-        rgba(40, 0, 0, 0.42) 100%
+        rgba(8, 8, 8, 0.99) 0%,
+        rgba(8, 8, 8, 0.95) 46%,
+        rgba(8, 8, 8, 0.7) 66%,
+        rgba(40, 0, 0, 0.08) 100%
       ),
       radial-gradient(
-        circle at 82% 56%,
-        rgba(150, 20, 25, 0.36),
-        transparent 44%
+        circle at 88% 44%,
+        rgba(150, 20, 25, 0.34),
+        transparent 48%
       );
   }
 
+  .hero-visual {
+    display: block;
+    opacity: 1;
+  }
+
   .hero-visual img {
-    opacity: 0.24;
-    right: -30vw;
-    top: 58%;
-    width: 124vw;
+    display: block;
+    opacity: 1;
+    right: -12vw;
+    top: 50%;
+    width: 146vw;
+  }
+
+  .hero-inner {
+    min-width: 0;
   }
 
   .hero-copy {
-    max-width: 94%;
+    max-width: calc(100vw - 2rem);
+    min-width: 0;
+    width: calc(100vw - 2rem);
   }
 
   .hero-kicker p {
@@ -1216,11 +1229,12 @@ img {
     letter-spacing: -0.035em;
     line-height: 0.98;
     margin-bottom: clamp(1.8rem, 7vw, 2.6rem);
-    max-width: 96%;
+    max-width: 100%;
   }
 
   .hero-title-line {
     gap: 0.14em;
+    max-width: 100%;
     padding-bottom: 0em;
   }
 
@@ -1232,12 +1246,16 @@ img {
 
   .hero-text {
     gap: 0.5rem;
-    max-width: 94%;
+    max-width: 100%;
+    min-width: 0;
+    width: 100%;
   }
 
   .hero-text p {
     font-size: 0.94rem;
     line-height: 1.62;
+    max-width: 100%;
+    overflow-wrap: break-word;
   }
 
   .hero-phrase {
@@ -1248,6 +1266,37 @@ img {
 
   .hero-phrase::before {
     width: 18px;
+  }
+}
+
+@media (min-width: 520px) and (max-width: 759px) {
+  .hero::before {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(8, 8, 8, 0.2) 0%,
+        rgba(8, 8, 8, 0.22) 48%,
+        rgba(20, 0, 0, 0.48) 100%
+      ),
+      linear-gradient(
+        90deg,
+        rgba(8, 8, 8, 0.99) 0%,
+        rgba(8, 8, 8, 0.92) 44%,
+        rgba(8, 8, 8, 0.64) 64%,
+        rgba(40, 0, 0, 0.1) 100%
+      ),
+      radial-gradient(
+        circle at 86% 46%,
+        rgba(150, 20, 25, 0.34),
+        transparent 46%
+      );
+  }
+
+  .hero-visual img {
+    opacity: 0.92;
+    right: -8vw;
+    top: 52%;
+    width: 116vw;
   }
 }
 
