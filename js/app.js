@@ -55,6 +55,14 @@
     return String(url || "").replace(/&amp;/g, "&");
   }
 
+  function getAssetUrl(path) {
+    if (typeof withVersion === "function") {
+      return withVersion(path);
+    }
+
+    return path;
+  }
+
   function appendQueryParams(url, params) {
     var normalizedUrl = normalizeUrl(url);
     var separator = normalizedUrl.indexOf("?") === -1 ? "?" : "&";
@@ -117,7 +125,7 @@
               '">' +
               '<span class="lesson-media">' +
               '<img src="' +
-              escapeHtml(lesson.thumbnail) +
+              escapeHtml(getAssetUrl(lesson.thumbnail)) +
               '" alt="' +
               escapeHtml(lesson.title) +
               '" loading="lazy" decoding="async" width="640" height="360">' +
@@ -277,7 +285,7 @@
           (index + 1) +
           "</span>" +
           '<img src="' +
-          escapeHtml(song.cover) +
+          escapeHtml(getAssetUrl(song.cover)) +
           '" alt="" loading="lazy" decoding="async" width="52" height="52">' +
           '<span class="track-copy"><strong>' +
           escapeHtml(song.title) +
@@ -342,10 +350,10 @@
     audio.pause();
     state.hasUserInteractedWithAudio = state.hasUserInteractedWithAudio || Boolean(shouldPlay);
     state.currentSongIndex = nextIndex;
-    audio.src = song.audio;
+    audio.src = getAssetUrl(song.audio);
     audio.load();
 
-    currentCover.src = song.cover;
+    currentCover.src = getAssetUrl(song.cover);
     currentCover.alt = "";
     currentTitle.textContent = song.title;
     currentArtist.textContent = song.artist;
@@ -411,8 +419,10 @@
         state.preloadAudio.preload = "metadata";
       }
 
-      if (state.preloadAudio.getAttribute("src") !== nextSong.audio) {
-        state.preloadAudio.src = nextSong.audio;
+      var nextSongAudio = getAssetUrl(nextSong.audio);
+
+      if (state.preloadAudio.getAttribute("src") !== nextSongAudio) {
+        state.preloadAudio.src = nextSongAudio;
         state.preloadAudio.load();
       }
     };

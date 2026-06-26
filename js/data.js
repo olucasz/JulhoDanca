@@ -1,3 +1,24 @@
+const ASSET_VERSION = "20260626";
+
+function withVersion(path) {
+  if (!path) {
+    return path;
+  }
+
+  var value = String(path);
+
+  if (/^(?:[a-z][a-z0-9+.-]*:|\/\/)/i.test(value)) {
+    return path;
+  }
+
+  if (/[?&]v=/.test(value)) {
+    return path;
+  }
+
+  var separator = value.indexOf("?") === -1 ? "?" : "&";
+  return value + separator + "v=" + ASSET_VERSION;
+}
+
 const songs = [
   {
     id: "algoNovo",
@@ -57,11 +78,11 @@ const songs = [
   },
   {
     id: "fenomenal",
-    title: "Phenomena DA DA",
-    artist: "RCS Young",
-    duration: "02:45",
+    title: "Fenomenal",
+    artist: "Guilherme Rigonato",
+    duration: "02:49",
     audio: "assets/audio/Fenomenal.mp3",
-    cover: "assets/images/covers/fenomenal.jpeg",
+    cover: "assets/images/covers/fenomenal.jpg",
   },
 ];
 
@@ -177,7 +198,7 @@ const videoLessons = [
         title: "Passo a Passo - Início",
         duration: "2:51",
         thumbnail: "assets/images/thumb/inicio.png",
-        videoUrl: "https://www.youtube.com/embed/ByUWagAA6vo",
+        videoUrl: "https://www.youtube.com/embed/xVdKY2JFoKY",
       },
       {
         id: "eleFaz-passo-refrao",
@@ -292,15 +313,15 @@ const videoLessons = [
   },
   //Fenomenal
   {
-    songId: "Phenomena",
-    songTitle: "Phenomena DA DA",
+    songId: "fenomenal",
+    songTitle: "Fenomenal",
     lessons: [
       {
-        id: "phenomena-completo",
+        id: "fenomenal-completo",
         title: "Coreografia Completa",
         duration: "2:32",
         thumbnail: "assets/images/thumb/completo.png",
-        videoUrl: "https://www.youtube.com/embed/PePhUA5VBOU",
+        videoUrl: "https://www.youtube.com/embed/B6Z_2lBfZig",
       },
     ],
   },

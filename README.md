@@ -115,13 +115,37 @@ A imagem é usada de forma discreta no fundo da entrada do site, com overlay esc
 
 Não rode build. Não instale npm. Não é necessário configurar servidor especial.
 
+## Atualizando o site sem problema de cache
+
+O projeto usa uma versão global para forçar celulares e navegadores antigos a baixarem arquivos novos quando o site for atualizado.
+
+Quando alterar CSS, JavaScript, imagens, capas, thumbnails ou áudios, atualize a versão em `index.html` e em `js/data.js`.
+
+No `js/data.js`, altere a versão atual para uma versão nova:
+
+```js
+const ASSET_VERSION = "VERSAO_NOVA";
+```
+
+No `index.html`, use a mesma versão nos arquivos locais carregados com query string:
+
+```html
+<link rel="stylesheet" href="css/style.css?v=VERSAO_NOVA">
+<script src="js/data.js?v=VERSAO_NOVA"></script>
+<script src="js/app.js?v=VERSAO_NOVA"></script>
+```
+
+Exemplo: se a versão atual for `20260626`, na próxima publicação use `20260627` ou outra versão nova.
+
+Essa troca faz o navegador tratar os arquivos como novas URLs e baixar a versão mais recente. Não adicione `?v=` em links externos do YouTube ou Vimeo.
+
 ## Como melhorar carregamento na Hostinger
 
 O projeto inclui um arquivo `.htaccess` na raiz.
 
-Ele orienta hospedagens Apache, como a Hostinger, a manter CSS, JS, imagens, SVGs, fontes e áudios em cache por mais tempo. Isso ajuda thumbnails, logos e músicas a carregarem mais rápido depois do primeiro acesso.
+Ele orienta hospedagens Apache, como a Hostinger, a revalidar o HTML, manter CSS e JS em cache moderado, e manter imagens, SVGs, fontes e áudios em cache por mais tempo. Isso ajuda thumbnails, logos e músicas a carregarem mais rápido depois do primeiro acesso.
 
-O HTML principal não recebe cache agressivo, para facilitar atualizações do site.
+O HTML principal não recebe cache agressivo. As atualizações de CSS, JS e mídia são controladas pela versão `?v=`.
 
 ## Observações
 
