@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540">
-  <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#202426"/><stop offset="1" stop-color="#7c2727"/></linearGradient></defs>
-  <rect width="960" height="540" fill="url(#g)"/>
-  <rect x="70" y="70" width="820" height="400" rx="18" fill="none" stroke="#f4f1ed" stroke-width="3" opacity=".18"/>
-  <path d="M247 354c68-102 143-153 226-153 76 0 138 43 188 129" fill="none" stroke="#f4f1ed" stroke-width="10" opacity=".34"/>
-  <text x="74" y="116" fill="#f4f1ed" font-family="Georgia, serif" font-size="44" font-weight="700">Parte 1</text>
-  <text x="74" y="164" fill="#b7b0aa" font-family="Arial, sans-serif" font-size="25" font-weight="700">Introdução e Aquecimento</text>
-</svg>

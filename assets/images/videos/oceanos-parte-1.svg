@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540">
-  <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#0f2e38"/><stop offset="1" stop-color="#161616"/></linearGradient></defs>
-  <rect width="960" height="540" fill="url(#g)"/>
-  <path d="M0 354c96-53 181-53 276 0s181 53 276 0 181-53 276 0 181 53 276 0" fill="none" stroke="#f4f1ed" stroke-width="7" opacity=".28"/>
-  <path d="M0 418c96-53 181-53 276 0s181 53 276 0 181-53 276 0 181 53 276 0" fill="none" stroke="#d73a3a" stroke-width="7" opacity=".5"/>
-  <text x="74" y="116" fill="#f4f1ed" font-family="Georgia, serif" font-size="44" font-weight="700">Parte 1</text>
-  <text x="74" y="164" fill="#b7b0aa" font-family="Arial, sans-serif" font-size="25" font-weight="700">Expressão e Transições</text>
-</svg>

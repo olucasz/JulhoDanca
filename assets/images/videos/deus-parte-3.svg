@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540">
-  <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#301c1c"/><stop offset="1" stop-color="#111111"/></linearGradient></defs>
-  <rect width="960" height="540" fill="url(#g)"/>
-  <path d="M192 336c84-74 164-109 240-106 106 4 203 77 290 220" fill="none" stroke="#f4f1ed" stroke-width="8" opacity=".32"/>
-  <circle cx="720" cy="158" r="58" fill="#d73a3a" opacity=".42"/>
-  <text x="74" y="116" fill="#f4f1ed" font-family="Georgia, serif" font-size="44" font-weight="700">Parte 3</text>
-  <text x="74" y="164" fill="#b7b0aa" font-family="Arial, sans-serif" font-size="25" font-weight="700">Coreografia Completa</text>
-</svg>
