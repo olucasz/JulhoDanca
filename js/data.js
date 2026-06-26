@@ -1,11 +1,43 @@
 const songs = [
   {
+    id: "algoNovo",
+    title: "Algo Novo Vindo",
+    artist: "Get Worship",
+    duration: "06:30",
+    audio: "assets/audio/algoNovo.wav",
+    cover: "assets/images/covers/algoNovo.jpeg",
+  },
+  {
     id: "SorriaMusic",
     title: "Sorria / Meu Alvo",
     artist: "Comunidade das Nações",
     duration: "05:12",
     audio: "assets/audio/sorria.wav",
     cover: "assets/images/covers/sorria.jpg",
+  },
+  {
+    id: "nossoGeneral",
+    title: "Nosso General",
+    artist: "Mateus Brito",
+    duration: "04:12",
+    audio: "assets/audio/NossoGeneral.mp3",
+    cover: "assets/images/covers/nossoGeneral.jpg",
+  },
+  {
+    id: "eleFaz",
+    title: "Ele Faz",
+    artist: "Robert Lucas",
+    duration: "03:41",
+    audio: "assets/audio/EleFaz.mp3",
+    cover: "assets/images/covers/eleFaz.jpg",
+  },
+  {
+    id: "aquiVou",
+    title: "Aqui Vou Eu",
+    artist: "NOVA",
+    duration: "04:20",
+    audio: "assets/audio/AquiVou.mp3",
+    cover: "assets/images/covers/aquiVou.jpg",
   },
   {
     id: "naoPare",
@@ -16,12 +48,20 @@ const songs = [
     cover: "assets/images/covers/naoPare.jpeg",
   },
   {
-    id: "algoNovo",
-    title: "Algo Novo Vindo",
-    artist: "Get Worship",
-    duration: "06:30",
-    audio: "assets/audio/algoNovo.wav",
-    cover: "assets/images/covers/algoNovo.jpeg",
+    id: "estacoes",
+    title: "Estações",
+    artist: "Dunamis Music",
+    duration: "07:43",
+    audio: "assets/audio/Estacoes.mp3",
+    cover: "assets/images/covers/estacoes.jpg",
+  },
+  {
+    id: "fenomenal",
+    title: "Phenomena DA DA",
+    artist: "RCS Young",
+    duration: "02:45",
+    audio: "assets/audio/Fenomenal.mp3",
+    cover: "assets/images/covers/fenomenal.jpeg",
   },
 ];
 
@@ -57,8 +97,7 @@ const videoLessons = [
         title: "Coreografia Completa",
         duration: "4:33",
         thumbnail: "assets/images/videos/algo-completo.png",
-        videoUrl:
-          "https://player.vimeo.com/video/1204574370?badge=0&autopause=0&player_id=0&app_id=58479",
+        videoUrl: "https://www.youtube.com/embed/rPByn0peHXM",
         externalUrl: "https://vimeo.com/1204574370",
       },
       {
